@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大数据展示系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>大数据展示系统</h1>
+    </header>
+    
+    <div class="container">
+        <!-- 左边区域栏 -->
+        <div class="colum">
+            <div id="e1" class="panel bar"></div>
+            <div id="e3" class="panel line"></div>
+            <div id="e6" class="panel pie"></div>
+        </div>
+        <!-- 中间区域栏 -->
+        <div class="colum">
+            <div class="number">
+                <div class="number-top">
+                    <ul>
+                        <li>10086</li>
+                        <li>100000</li>
+                    </ul>
+                </div>
+
+                <div class="number-bottom">
+                    <ul>
+                        <li>当前需求人数</li>
+                        <li>市场供应人数</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map">
+                <div class="earth"></div>
+                <div class="earth-line"></div>
+                <div class="earth-light"></div>
+                <div id="e5" class="chart"></div>
+            </div>
+        </div>
+        <!-- 右边区域栏 -->
+        <div class="colum">
+                <div id="e2" class="panel bar"></div>
+                <div id="e4" class="panel line"></div>
+                <div id="e7" class="panel pie"></div>
+        </div>
+    </div>
+</body>
+<!-- 一般引用JavaScript的js代码放在body下面 -->
+<script src="js/echarts.min.js"></script>
+<script src="js/china.js"></script>
+<script src="js/index.js"></script>
+</html>

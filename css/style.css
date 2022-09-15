@@ -1,0 +1,189 @@
+*{
+    /* *代表所有的盒子 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+
+    resize: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 定义一个文字 */
+@font-face{
+    font-family: myfont;
+    src: url(../font/DS-DIGIT.TTF);
+}
+
+body{
+    background: url(../img/bg.jpg) top center;
+    line-height: 1.15;
+}
+header{
+    height: 1.25rem;
+    background: url(../img/head_bg.png);
+    background-size: cover;
+}
+header>h1{
+    color: white;
+    font-size: .475rem;
+    line-height: 1rem;
+    text-align: center;
+}
+.container{
+    min-width: 1024px;
+    max-width: 1920px;
+    display: flex;
+    /* flex流体布局 */
+    /* margin: ;外间距 */
+    padding: .25rem;
+}
+
+.container>.colum{
+    flex: 3;
+}
+.container>.colum:nth-child(2){
+    flex: 5;
+    margin-left: .1875rem;
+    margin-right: .1875rem;
+}
+.container>.colum>.panel{
+    height: 3.875rem;
+    /* border: 大小 线条类型 颜色; */
+    border: 1px solid rgba(25, 186, 139, 0.17);
+    margin-bottom: .1875rem;
+    /* background: 图片 颜色; */
+    background: url(../img/line.png) rgba(15, 231, 213, 0.03);
+    padding: .1875rem;
+}
+
+/* 数字框 */
+.number{
+
+}
+.number>.number-top>ul{
+    display: flex;
+    border: 1px solid rgba(25, 186, 139, 0.17)
+}
+.number>.number-top>ul>li{
+    flex: 1;
+    height: 1.25rem;
+    color: #ffeb7b;
+    font-size: 1rem;
+    font-family: myfont;
+    text-align: center;
+    position: relative;
+}
+
+/* :nth-child()表示选择第几个子节点    ::before ::after表示再选中元素前后添加信息 */
+.number>.number-top>ul>li:nth-child(1)::after{
+    content: " ";
+    width: 1px;
+    height: .6rem;
+    display: inline-block;
+    background: rgba(25, 186, 139, 0.3);
+    position: absolute;
+    right: 0px;
+    top: 25%;
+}
+
+
+.number>.number-bottom>ul{
+    display: flex;
+}
+.number>.number-bottom>ul>li{
+    flex: 1;
+    height:.5rem;
+    color: white;
+    font-size: .3125rem;
+    font-family: myfont;
+    text-align: center;
+    position: relative;
+}
+.number>.number-bottom>ul>li:nth-child(1)::after{
+    content: " ";
+    width: 1px;
+    height: .6rem;
+    display: inline-block;
+    background: rgba(25, 186, 139, 0.3);
+    position: absolute;
+    right: 0px;
+    top: 25%;
+}
+
+/* map地图效果 */
+.map{
+    height: 10.125rem;
+    /* 父级相对定位 */
+    position: relative;
+}
+/* 子绝父相  实现子元素的自由布局 */
+.map>.earth{
+    width: 6.475rem;
+    height: 6.475rem;
+    background: url(../img/map.png);
+    /* background-size: 背景尺寸 cover，背景刚好铺满盒子; */
+    background-size: cover;
+    opacity: 0.3;
+    /* (透明度) */
+    position: absolute;
+    left: 50%;
+    margin-left: -3.2375rem;
+    top: 50%;
+    margin-top: -3.2375rem;
+    /* z-index: ;表示浮起来的第几页 */
+    z-index: 1000;
+}
+.map>.earth-line{
+    width: 8.0375rem;
+    height: 8.0375rem;
+    background: url(../img/lbx.png);
+    background-size: cover;
+    position: absolute;
+    z-index: 1001;
+    /* 定义了动画，必须加在使用 */
+    /* animation:动画名字 动画完成时间 动画的缓动类型 动画是否无限重复 */
+    /* linear匀速运动，infinite无限重复 */
+    animation: roll 20s linear infinite;
+    opacity: 0.6;
+    left: 50%;
+    margin-left: -4.025rem;
+    top: 50%;
+    margin-top: -4.025rem;
+}
+.map>.earth-light{
+    width: 7.075rem;
+    height: 7.075rem;
+    background: url(../img/jt.png);
+    background-size: cover;
+    position: absolute;
+    z-index: 1002;
+    left: 50%;
+    margin-left: -3.5375rem;
+    top: 50%;
+    margin-top: -3.5375rem;
+    animation: roll-re 15s linear infinite;
+    opacity: 0.9;
+}
+
+.map>.chart{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    z-index: 1003;
+    background-size: cover;
+}
+
+/* 定义动画 关键字用@keyframes */
+/* 定义了一个roll的旋转动画 */
+@keyframes roll{
+    /* transform属性改变，rotate旋转，deg角度，数字和deg之间不加空格 */
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg);}
+}
+
+
+@keyframes roll-re{
+    from{ transform: rotate(360deg);}
+    to{ transform: rotate(0deg);}
+}
